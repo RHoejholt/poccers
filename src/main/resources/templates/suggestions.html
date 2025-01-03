@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suggestions Form</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+    }
+
+    form {
+      width: 80%;
+      max-width: 500px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+  </style>
+</head>
+<body>
+<h1>Suggestions Form</h1>
+<form action="/submit-suggestion" method="POST" enctype="multipart/form-data">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+  <label for="suggestion">Your Suggestion:</label>
+  <textarea id="suggestion" name="suggestion" rows="5" placeholder="Share your ideas or feedback" required></textarea>
+
+  <label for="file">Attach File (optional):</label>
+  <input type="file" id="file" name="file">
+
+  <button type="submit">Submit Suggestion</button>
+</form>
+</body>
+</html>

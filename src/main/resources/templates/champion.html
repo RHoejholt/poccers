@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fiddlesticks Items</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+    }
+
+    h1 {
+      margin: 20px 0;
+    }
+
+    .item-list {
+      width: 80%;
+      border-collapse: collapse;
+    }
+
+    .item-list th, .item-list td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .item-list img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .stars {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    .stars span {
+      font-size: 1.2rem;
+      color: gold;
+    }
+
+    .stars span.gray {
+      color: lightgray;
+    }
+  </style>
+</head>
+<body>
+<h1>Fiddlesticks Items</h1>
+<table class="item-list">
+  <thead>
+  <tr>
+    <th>Item</th>
+    <th>Description</th>
+    <th>Rating</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><img src="https://via.placeholder.com/50" alt="Item 1"></td>
+    <td>Item 1 Description</td>
+    <td>
+      <div class="stars">
+        <span>★</span><span>★</span><span>★</span><span class="gray">★</span><span class="gray">★</span>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td><img src="https://via.placeholder.com/50" alt="Item 2"></td>
+    <td>Item 2 Description</td>
+    <td>
+      <div class="stars">
+        <span>★</span><span>★</span><span>★</span><span>★</span><span class="gray">★</span>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td><img src="https://via.placeholder.com/50" alt="Item 3"></td>
+    <td>Item 3 Description</td>
+    <td>
+      <div class="stars">
+        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+      </div>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
