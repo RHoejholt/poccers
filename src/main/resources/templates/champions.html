@@ -41,6 +41,25 @@
             border-radius: 4px;
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const searchBox = document.getElementById("search-box");
+            const championCards = document.querySelectorAll(".champion-card");
+
+            searchBox.addEventListener("input", () => {
+                const searchTerm = searchBox.value.toLowerCase();
+
+                championCards.forEach(card => {
+                    const championName = card.querySelector("p").textContent.toLowerCase();
+                    if (championName.includes(searchTerm)) {
+                        card.style.display = "block"; // Show the card
+                    } else {
+                        card.style.display = "none"; // Hide the card
+                    }
+                });
+            });
+        });
+    </script>
 
 </head>
 <body>
