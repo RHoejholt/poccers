@@ -48,15 +48,27 @@
 
             searchBox.addEventListener("input", () => {
                 const searchTerm = searchBox.value.toLowerCase();
+                var matchFound = false;
 
                 championCards.forEach(card => {
                     const championName = card.querySelector("p").textContent.toLowerCase();
-                    if (championName.includes(searchTerm)) {
+                    if (championName.startsWith(searchTerm)) {
                         card.style.display = "block"; // Show the card
+                        matchFound = true;
                     } else {
                         card.style.display = "none"; // Hide the card
                     }
                 });
+                if(!matchFound){
+                    championCards.forEach(card => {
+                        const championName = card.querySelector("p").textContent.toLowerCase();
+                        if (championName.includes(searchTerm)) {
+                            card.style.display = "block"; // Show the card
+                        } else {
+                            card.style.display = "none"; // Hide the card
+                        }
+                    });
+                }
             });
         });
     </script>
