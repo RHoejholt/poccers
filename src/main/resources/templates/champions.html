@@ -45,29 +45,27 @@
         document.addEventListener("DOMContentLoaded", () => {
             const searchBox = document.getElementById("search-box");
             const championCards = document.querySelectorAll(".champion-card");
+            let lastMatch = null; // Store the last matched card
 
             searchBox.addEventListener("input", () => {
                 const searchTerm = searchBox.value.toLowerCase();
-                var matchFound = false;
+                let matchFound = false;
 
                 championCards.forEach(card => {
                     const championName = card.querySelector("p").textContent.toLowerCase();
                     if (championName.startsWith(searchTerm)) {
                         card.style.display = "block"; // Show the card
+                        lastMatch = card; // Update the last matched card
                         matchFound = true;
                     } else {
                         card.style.display = "none"; // Hide the card
                     }
                 });
-                if(!matchFound){
-                    championCards.forEach(card => {
-                        const championName = card.querySelector("p").textContent.toLowerCase();
-                        if (championName.includes(searchTerm)) {
-                            card.style.display = "block"; // Show the card
-                        } else {
-                            card.style.display = "none"; // Hide the card
-                        }
-                    });
+
+                if (!matchFound && lastMatch) {
+                    // If no match is found, show the last matched card
+                    championCards.forEach(card => card.style.display = "none"); // Hide all cards
+                    lastMatch.style.display = "block"; // Show the last matched card
                 }
             });
         });
