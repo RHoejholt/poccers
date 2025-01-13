@@ -16,11 +16,15 @@ public class Item {
         return itemID;
     }
 
-    public String getItemName() {
+    public String getName() {
         return itemName;
     }
 
-    public String getItemDescription() {
+    public String getDescription() {
         return itemDescription;
+    }
+
+    public void setItemID(int itemID) {
+        this.itemID = itemID;
     }
 }

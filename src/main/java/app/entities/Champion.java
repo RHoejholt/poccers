@@ -16,7 +16,7 @@ public class Champion {
         return championID;
     }
 
-    public String getChampionName() {
+    public String getName() {
         return championName;
     }
 

@@ -32,4 +32,32 @@ public class ItemMapper {
         String sql = "SELECT * FROM Item WHERE itemID = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setInt(1, itemID);
-            try (ResultSet rs =
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    return new Item(rs.getInt("itemID"), rs.getString("name"), rs.getString("description"));
+                }
+            }
+        }
+        return null;
+    }
+
+    public List<Item> findAll() throws SQLException {
+        String sql = "SELECT * FROM Item";
+        List<Item> items = new ArrayList<>();
+        try (Statement stmt = connection.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+            while (rs.next()) {
+                items.add(new Item(rs.getInt("itemID"), rs.getString("name"), rs.getString("description")));
+            }
+        }
+        return items;
+    }
+
+    public void delete(int itemID) throws SQLException {
+        String sql = "DELETE FROM Item WHERE itemID = ?";
+        try (PreparedStatement ps = connection.prepareStatement(sql)) {
+            ps.setInt(1, itemID);
+            ps.executeUpdate();
+        }
+    }
+}
