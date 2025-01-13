@@ -35,4 +35,8 @@ public class Vote {
     public String getIpaddress() {
         return ipaddress;
     }
+
+    public void setVoteID(int voteID) {
+        this.voteID = voteID;
+    }
 }
